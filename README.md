@@ -56,3 +56,5 @@
 | 16  | DOCS - REACT            | mm15             | -      | [ ]      | -             |
 | 17  | DOCS - REACT-NATIVE     | mm16             | -      | [ ]      | -             |
 | 18  | DOCS - UNITY            | mm17             | -      | [ ]      | -             |
+| 18  | DOCS - FIREBASE         | mm18             | -      | [ ]      | -             |
+| 18  | DOCS - GRAPHQL          | mm19             | -      | [ ]      | -             |

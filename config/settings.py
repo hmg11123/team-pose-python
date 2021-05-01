@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+# node로 했을때 import path from "path"
+import os
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,9 +46,15 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     "members.apps.MembersConfig",
     "protpolios.apps.ProtpoliosConfig",
+    "doc_boards.apps.DocBoardsConfig"
 ]
 
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+PART_APPS = [
+    "django_seed",
+]
+
+
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + PART_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,3 +140,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 파일을 업로드하면 업로드 파일안에 들어가게 해주는 것
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+# 파일을 클릭했을때 사진을 보여주게 하는 url앞에 붙어주는 녀석
+MEDIA_URL = "/media/"

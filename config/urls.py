@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from members import views as member_views
 
 urlpatterns = [
+    path("", member_views.all_member_views, name="home"),
     path('admin/', admin.site.urls),
 ]
+
+# 파일처리
+if settings.DEBUG:
+    # 사용자한테 "/media/"로 받았을때 MEDIA_ROOT로 들어간다
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
