@@ -9,6 +9,7 @@ black = "*"
 pillow = "*"
 django-ckeditor = "*"
 django-seed = "*"
+mysqlclient = "*"
 
 [dev-packages]
 flake8 = "*"
