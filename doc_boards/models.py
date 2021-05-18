@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class FileModel(models.Model):
 
     caption = models.CharField(max_length=100)
@@ -10,8 +11,8 @@ class FileModel(models.Model):
     class Meta:
         verbose_name_plural = "FILE"
 
-class DocBoardModels(models.Model):
 
+class DocBoardModels(models.Model):
 
     CHOICE_HTML = "html"
     CHOICE_CSS = "css"
@@ -48,7 +49,7 @@ class DocBoardModels(models.Model):
     )
 
     title = models.CharField(max_length=200)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, related_name="doc_board", on_delete=models.CASCADE)
     description = models.TextField()
     board_type = models.CharField(choices=CHOICES_TYPE, max_length=40)
     likeCount = models.IntegerField(default=0)

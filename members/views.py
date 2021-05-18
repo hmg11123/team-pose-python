@@ -10,6 +10,6 @@ def member_list_view_handler(request):
 
     print(members[0].email)
 
-    return render(request, "screens/member_list.html", context={
-        "members": members
-    })
+    return render(request, "screens/member_list.html")
+    # context={"members": members}
+    
