@@ -8,8 +8,14 @@ def member_list_view_handler(request):
     
     members = member_models.MemberModel.objects.all()
 
-    print(members[0].email)
+    for mem in members:
+        if mem.pk % 2 == 0:
+            print(f"{mem}짝수")
+            mem.isEven = True
+        else:
+            print(f"{mem}홀수")
+            mem.isEven = False
 
-    return render(request, "screens/member_list.html")
+    return render(request, "screens/member_list.html", context={"members": members})
     # context={"members": members}
     
